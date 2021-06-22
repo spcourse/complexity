@@ -23,7 +23,7 @@ Most importantly, the function `read_gutenberg_file()` will take the filename
 of a book and read its contents, and handling the user input has also already
 been taken care of. The rest of the book indexing system is up to you to write.
 
-## Assignment 1: Filtering words
+## Filtering words
 
 The provided `read_gutenberg_file()` function is almost complete. It skips the
 licensing part of the file, splits the entire file into words, removes
@@ -64,7 +64,7 @@ the functions input size **N**.
 
 What is the complexity of your `filter_word()` function? Explain your answer.
 
-## Assignment 2: Indexing words
+## Indexing words
 
 With these two functions completed, the `read_gutenberg_file()` function should
 now work correctly. It will return you a list of tuples, where each tuple
