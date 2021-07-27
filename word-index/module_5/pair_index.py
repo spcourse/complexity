@@ -85,7 +85,8 @@ def user_input_pair_search(book_index):
     User input loop. For every line provided as input, extract words, convert
     them, find the line numbers, and show results.
     """
-    for line in sys.stdin:
+    while True:
+        line = input()
         words = [convert_word(s) for s in line.split()]
         line_numbers = search_pair_index(words[0], words[1], book_index)
         show_search_results(line_numbers)
@@ -94,21 +95,19 @@ if __name__ == "__main__":
     # Read the stopwords from the stopwords file
     stopwords = read_stopwords()
 
-    try:
-        if len(sys.argv) == 1:
-            print("No arguments provided.", \
-                    "Please specifiy the file you want to search.")
-            raise KeyboardInterrupt
+    # If there is no argument provided
+    if len(sys.argv) == 1:
+        print("No arguments provided.",
+              "Please specifiy the file you want to search.")
 
-        # Uses first command line argument as infile to build an index of word pairs
-        book_index = build_pair_index(sys.argv[1], stopwords)
-
-        print("Index built for", sys.argv[1]+".",
-                "Type the word you want to look up.")
-
-        # Start the user input loop
-        user_input_pair_search(book_index)
-
-    except KeyboardInterrupt:
-        print("\nQuitting the program.")
+        # Stop the program
         sys.exit()
+
+    # Uses first command line argument as input file to build an index of words
+    book_index = build_pair_index(sys.argv[1], stopwords)
+
+    print("Index built for", sys.argv[1]+".",
+          "Type the word you want to look up.")
+
+    # Start the user input loop
+    user_input_pair_search(book_index)

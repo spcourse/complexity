@@ -58,27 +58,30 @@ def read_gutenberg_file(filename, stopwords):
     processed_words = []
 
     with open(filename, encoding='utf8') as f:
-        started = False
 
-        # Read the lines in the file and give them a number
-        for i, line in enumerate(f.readlines()):
-            if line[:9] == "*** START":
-                started = True
-            elif line[:7] == "*** END":
-                # Stop reading
-                break
+        # Read the first line of the file
+        line = f.readline()
 
-            elif started:
-                # i starts at 0, while our line numbers should start at 1
-                line_number = i+1
+        # Our line numbers should start at 1
+        line_number = 1
 
-                # Split the line into a list of strings (splits on spaces)
-                for s in line.split():
-                    word = convert_word(s)
+        # Find the start of the book, ignore all lines before
+        while line[:9] != "*** START":
+            line = f.readline()
+            line_number += 1
 
-                    # Filter empty strings and stop words
-                    if len(word) > 0 and not filter_word(word, stopwords):
-                        processed_words.append((word, line_number))
+        # Keep reading until we find the end of the book
+        while line[:7] != "*** END":
+            line = f.readline()
+            line_number += 1
+
+            # Split the line into a list of strings (splits on spaces)
+            for substring in line.split():
+                word = convert_word(substring)
+
+                # Filter empty strings and stop words
+                if len(word) > 0 and not filter_word(word, stopwords):
+                    processed_words.append((word, line_number))
 
     return processed_words
 
@@ -87,7 +90,9 @@ def user_input_search(book_index):
     User input loop. For every line provided as input, convert it, find the line
     numbers, and show results.
     """
-    for line in sys.stdin:
+    while True:
+        line = input()
+
         searched_word = convert_word(line)
         line_numbers = search_index(searched_word, book_index)
         show_search_results(line_numbers)
@@ -96,21 +101,19 @@ if __name__ == "__main__":
     # Read the stopwords from the stopwords file
     stopwords = read_stopwords()
 
-    try:
-        if len(sys.argv) == 1:
-            print("No arguments provided.", \
-                    "Please specifiy the file you want to search.")
-            raise KeyboardInterrupt
+    # If there is no argument provided
+    if len(sys.argv) == 1:
+        print("No arguments provided.",
+              "Please specifiy the file you want to search.")
 
-        # Uses first command line argument as infile to build an index of words
-        book_index = build_index(sys.argv[1], stopwords)
-
-        print("Index built for", sys.argv[1]+".",
-                "Type the word you want to look up.")
-
-        # Start the user input loop
-        user_input_search(book_index)
-
-    except KeyboardInterrupt:
-        print("\nQuitting the program.")
+        # Stop the program
         sys.exit()
+
+    # Uses first command line argument as input file to build an index of words
+    book_index = build_index(sys.argv[1], stopwords)
+
+    print("Index built for", sys.argv[1]+".",
+          "Type the word you want to look up.")
+
+    # Start the user input loop
+    user_input_search(book_index)
