@@ -44,7 +44,7 @@ Start by reading the part about *Notebook cells* and *Markdown*. Next, answer
 the questions on the *Efficiency* section (which was the first part of this
 module) and write your answers in the code cells there.
 
-For each of the sections in Part 1, 2 and 3 of this module there will some
-corresponing question you should answer in the notebook. After completing a
+For each of the sections in Part 1, 2 and 3 of this module, there will be some
+corresponding question you should answer in the notebook. After completing a
 section, answer the question in the notebook and check your answers, before
 moving on to the next section.
