@@ -15,7 +15,7 @@ For example, if we want to find the word "dinner" in the collected works of Jane
     The word "dinner" can be found on lines: 258, 289, 1096, 1166, 1186, 1885, 2142, 2302, 2307, 2321, 3598, 4187, 4261, 4871, 5031, 5344, 5449, 5463, 5524, 5698, 7073, 7412, 8709, 9406, 9513, 10484, 11246, 11320, 11401, 11538, 11654, 11770, 12816
     ...
 
-*Note that although the example above provides the lines in ascending order, your code doesn't have to do this.*
+*Note that although the example above prints the lines in ascending order, your code doesn't have to do this.*
 
 ## Get started
 
