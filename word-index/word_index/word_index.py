@@ -66,7 +66,7 @@ def user_input_search(book_index):
     while line not in ["q", "Q", "quit", ""]:
         searched_word = convert_word(line)
         line_numbers = search_index(searched_word, book_index)
-        show_search_results(line_numbers)
+        show_search_results(searched_word, line_numbers)
 
         line = input("\nEnter search term: ")
 
