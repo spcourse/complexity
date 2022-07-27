@@ -1,6 +1,6 @@
 # Complexity questions, part 2
 
-All the code fragments below have a variable `n`. Determine the big O complexity in terms of `n` for these fragments. If for example the big O complexity of an algorithm is quadratic, your answer should be "O(n^2)".
+All the code fragments below have some structure that holds data. Determine the big O complexity in terms of `n` for these fragments, where `n` is a variable that represents the number of elements in the datastructure. If for example the big O complexity of an algorithm is quadratic, your answer should be "O(n^2)".
 
 ### Question 5
 
@@ -16,10 +16,9 @@ Consider the following pseudo code. Take `n` to be the length of the list.
 
 ### Question 6
 
-For determining the complexity of the code below you don't need to take the first two lines into account.
+For determining the complexity of the code below you don't need to take the first line into account.
 
     my_set = set([42, 21, 7, 3, 2])
-    n = len(my_set)
 
     # determine complexity of part here below:
     if 14 in my_set:
@@ -32,13 +31,12 @@ For determining the complexity of the code below you don't need to take the firs
 
 ### Question 7
 
-For determining the complexity of the code below you don't need to take the first two lines into account.
+For determining the complexity of the code below you don't need to take the first line into account.
 
     my_set = set([42, 21, 7, 3, 2])
-    n = len(my_set)
 
     # determine complexity of part here below:
-    for i in range(n):
+    for i in range(len(my_set):
         if i in my_set:
             print(f"{i}: found :)")
         else:
