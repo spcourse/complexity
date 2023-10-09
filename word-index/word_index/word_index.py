@@ -33,7 +33,7 @@ def create_index(filename, stopwords):
 
     # TODO: initialize an index for all the words.
 
-    with open(filename) as f:
+    with open(filename, encoding = 'ISO-8859-1') as f:
         # Read the lines in the file and give them a number
         for line_number, line in enumerate(f.readlines(), 1):
 

@@ -85,6 +85,3 @@ def main():
     jaccard_index = len(intersection_bag) / len(union_bag)
 
     print(f'Jaccard index of {sys.argv[1]} and {sys.argv[2]}: {jaccard_index:.3f}')
-
-
-main()
