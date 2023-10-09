@@ -24,8 +24,8 @@ For example, if we want to find the word "dinner" in the collected works of Jane
 
 In this zip you'll find two files:
 
-- `word_index.py`: This contains already quite a bit of starting code. You will have to fill in the missing pieces.
-- `stopwords.txt`: This contains a list of words that can be ignored by the indexing system. (So, we don't have to index a gazillion occurrences of, for example, the word "the".)
+- `word_index.py`: This file already contains quite a bit of starting code. You will have to fill in the missing pieces.
+- `stopwords.txt`: This file contains a list of words that can be ignored by the indexing system. (So, we don't have to index a gazillion occurrences of, for example, the word "the".)
 
 ## Functions:
 
