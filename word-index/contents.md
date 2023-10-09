@@ -19,7 +19,7 @@ For example, if we want to find the word "dinner" in the collected works of Jane
 
 ## Get started
 
-* Download the provide code here: [download word_index.zip](word_index.zip).
+* Download the provided code here: [download word_index.zip](word_index.zip).
 * Unzip the files into the same working directory as the Jaccard assignment (e.g. `complexity`).
 
 In this zip you'll find two files:

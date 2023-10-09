@@ -36,7 +36,7 @@ Where $$A$$ and $$B$$ are the bags of words.
 
 We've written some code that computes the Jaccard index of two text files.
 
-* Download the provide code here: [download jaccard.zip](jaccard.zip).
+* Download the provided code here: [download jaccard.zip](jaccard.zip).
 * Create a working directory for this module (e.g. `complexity`).
 * Unzip the files into the working directory.
 
