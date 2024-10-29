@@ -65,9 +65,13 @@ First analyze the file. Read the file and try to understand how it is working. F
 
 By making clever use of existing Python data structures, you can make the code more elegant (simpler and easier to read) and much, much more efficient.
 
+You are allowed (and expected) to change the functions in the provided code and even change the design of the file fundamentally. Your goal is to improve the big O!
+
 It is possible to make this run very fast (in under a second):
 
     $ python jaccard.py texts/holmes.txt texts/shakespeare.txt
+
+> Don't forget to change the comments and docstrings! They could certainly be improved.
 
 ### Step 3: Analyze (again)
 

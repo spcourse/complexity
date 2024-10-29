@@ -4,9 +4,9 @@
 import sys
 import string
 
-def read_as_list(file):
+def read_words_from_file(file):
     """
-    Opens a file and outputs a list of the words contained in the file.
+    Opens a file and returns all the words contained in the file.
     The words are converted using the clean function.
     """
     data = file.read()
@@ -42,7 +42,7 @@ def unique_items(collection):
 def intersection(collection1, collection2):
     """
     Return the intersection of the two collections
-    (so a list containing all the elements that are in both collections).
+    (all the elements that are in both collections).
     """
     intersection_list = []
     for element in collection1:
@@ -56,7 +56,7 @@ def intersection(collection1, collection2):
 def union(collection1, collection2):
     """
     Return the union of the two collections
-    (so a list containing all the elements that are in either collection).
+    (all the elements that are in at least one of the collections).
     """
     return unique_items(collection1 + collection2)
 
@@ -70,18 +70,20 @@ def main():
 
     # Open both text files and convert to list of words
     with open(sys.argv[1], 'r', encoding = 'ISO-8859-1') as file1:
-        list1 = read_as_list(file1)
+        words1 = read_words_from_file(file1)
 
     with open(sys.argv[2], 'r', encoding = 'ISO-8859-1') as file2:
-        list2 = read_as_list(file2)
+        words2 = read_words_from_file(file2)
 
-    # Convert lists of words to bags of words
-    bag_of_words1 = unique_items(list1)
-    bag_of_words2 = unique_items(list2)
+    # Convert words collection to bags of words
+    bag_of_words1 = unique_items(words1)
+    bag_of_words2 = unique_items(words2)
 
-    # Compute jaccard
+    # Compute jaccard score
     intersection_bag = intersection(bag_of_words1, bag_of_words2)
     union_bag = union(bag_of_words1, bag_of_words2)
     jaccard_index = len(intersection_bag) / len(union_bag)
 
     print(f'Jaccard index of {sys.argv[1]} and {sys.argv[2]}: {jaccard_index:.3f}')
+
+main()
