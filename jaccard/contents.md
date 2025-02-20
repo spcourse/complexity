@@ -59,13 +59,13 @@ Note: The text files contained in the download are copied from [Harvard's CS50 c
 
 ### Step 1: Analyze
 
-First analyze the file. Read the file and try to understand how it is working. For every function in the file, write down (in the commentary above the function) its current big O complexity. How does the size of the input file affect the run time?
+First analyze the file. Read the file and try to understand how it is working. For every function in the file, write down (in the commentary at the top of the function) its current big O complexity. How does the size of the input file affect the run time?
 
 ### Step 2: Improve
 
 By making clever use of existing Python data structures, you can make the code more elegant (simpler and easier to read) and much, much more efficient.
 
-You are allowed (and expected) to change the functions in the provided code and even change the design of the file fundamentally. Your goal is to improve the big O!
+**You are allowed (and expected) to change the functions in the provided code and even change the design of the file fundamentally. Your goal is to improve the big O!**
 
 It is possible to make this run very fast (in under a second):
 
@@ -75,4 +75,4 @@ It is possible to make this run very fast (in under a second):
 
 ### Step 3: Analyze (again)
 
-Again, for every function in the file, write in the commentary its new big O complexity. Write it down so that it's easy to see both the original complexity and the improved one.
+Again, for every function in the file, write its new big O complexity in the commentary. Write it down such that it's easy to see both the original complexity and the improved one.
